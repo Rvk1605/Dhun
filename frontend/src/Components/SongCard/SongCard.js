@@ -29,7 +29,7 @@ export default function SongCard() {
       </AspectRatio>
       
       <div>
-        <Typography level="h2" fontSize="lg" id="card-description" mb={0.5}>
+        <Typography level="h2" fontSize="md" id="card-description" mb={0.5}>
           Yosemite Park
         </Typography>
         <Typography fontSize="sm" aria-describedby="card-description" mb={1}>

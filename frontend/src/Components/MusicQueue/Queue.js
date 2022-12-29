@@ -2,16 +2,16 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { TransitionGroup } from 'react-transition-group';
 import SongCard from '../SongCard/SongCard';
 const FRUITS = [
   '🍏 Apple',
   '🍌 Banana',
+  '🍍 Pineapple',
+  '🥥 Coconut',
+  '🍉 Watermelon',
   '🍍 Pineapple',
   '🥥 Coconut',
   '🍉 Watermelon',
@@ -26,7 +26,7 @@ function renderItem({ item, handleRemoveFruit }) {
 }
 
 function Queue() {
-    const [fruitsInBasket, setFruitsInBasket] = React.useState(FRUITS.slice(0, 3));
+    const [fruitsInBasket, setFruitsInBasket] = React.useState(FRUITS);
 
     const handleAddFruit = () => {
         const nextHiddenItem = FRUITS.find((i) => !fruitsInBasket.includes(i));
@@ -50,8 +50,8 @@ function Queue() {
     );
 
   return (
-    <div>
-      <Box sx={{ mt: 1 }}  style={{marginTop:'5%' ,color:'white' ,backgroundColor:'black' ,borderRadius:15}}>
+    <div style={{width:'23%'}}>
+      <Box sx={{ mt: 1 }}  style={{marginTop:'10%' ,color:'white' ,backgroundColor:'black' ,borderRadius:15 }}>
         <p style={{display:'inline' ,fontWeight:'bolder' ,fontSize:30 }} >Queue</p>
         <List>
           <TransitionGroup>
@@ -62,7 +62,7 @@ function Queue() {
             ))}
           </TransitionGroup>
         </List>
-        {/* <div>{addFruitButton}</div> */}
+        <div>{addFruitButton}</div>
          
       </Box>
     </div>
